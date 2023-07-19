@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+}
+
+#gameboard {
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+
+.box {
+  width: 30%;
+  height: 30%;
+  border: solid black 1px;
+}
+
+#input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
