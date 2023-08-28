@@ -6,16 +6,21 @@
     <title>TicTacToe</title>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+    </style>
   </head>
   <body>
-    <div id="gameboard"></div>
+    <div id="gameboard" style="display: none"></div>
     <div id="input">
-      <input type="text" id="player-1" placeholder="player 1 name" />
-      <input type="text" id="player-2" placeholder="player 2 name" />
+      <h2>🔥Input Your Name🔥</h2>
+      <div id="player-input">
+        <input type="text" id="player-1" placeholder="Player 1" />
+        <input type="text" id="player-2" placeholder="Player 2" />
+      </div>
       <button id="start-btn">Start</button>
-      <button id="reset-btn">Reset</button>
     </div>
-    <div id="message"></div>
-    <div id="result-display"></div>
+    <button id="reset-btn" style="display: none">Reset</button>
+    <div id="message" style="display: none;"></div>
   </body>
 </html>

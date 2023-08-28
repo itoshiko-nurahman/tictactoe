@@ -67,12 +67,15 @@ const gameControl = (() => {
   };
 
   const handleClick = (event) => {
+    if (gameOver == true) {
+      return
+    }
     let index = parseInt(event.target.id.split("-")[1]);
     gameBoard.updateBoard(index, currentPlayer.symbol);
 
     if (checkForWinner(gameBoard.getBoard(), currentPlayer.symbol)) {
       gameOver = true;
-      displayWinner(`${currentPlayer.name} is Win!`);
+      displayWinner(`${currentPlayer.name} Win!`);
     } else if (checkForTie(gameBoard.getBoard())) {
       gameOver = true;
       displayWinner("It's a Tie!");
@@ -86,6 +89,7 @@ const gameControl = (() => {
     currentPlayer = player[0];
     gameOver = false;
     document.querySelector("#message").innerHTML = "";
+    document.querySelector("#message").style.display = "none";
   };
 
   return {
@@ -124,12 +128,20 @@ function checkForTie(board) {
 }
 
 function displayWinner(message) {
+  document.querySelector("#message").style.display = "flex";
   document.querySelector("#message").innerHTML = message;
 }
 
 const startBtn = document.querySelector("#start-btn");
 const resetBtn = document.querySelector("#reset-btn");
+const gameboard = document.querySelector("#gameboard");
+const inputForm = document.querySelector("#input");
 // const boards = document.querySelectorAll(".box");
 
-startBtn.addEventListener("click", gameControl.start);
+startBtn.addEventListener("click", () => {
+  gameControl.start();
+  gameboard.style.display = "flex";
+  inputForm.style.display = "none";
+  resetBtn.style.display = "block";
+});
 resetBtn.addEventListener("click", gameControl.reset);

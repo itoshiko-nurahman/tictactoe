@@ -1,15 +1,27 @@
 * {
+  font-family: "Poppins", sans-serif;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --red: #ff1312;
+  --yellow: #ff9705;
 }
 
 body {
   height: 100vh;
-  margin: 0;
+  background-color: var(--red);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 #gameboard {
-  height: 400px;
-  display: flex;
+  height: 70vh;
+  width: 70vh;
   flex-wrap: wrap;
   align-content: center;
   justify-content: center;
@@ -18,12 +30,80 @@ body {
 .box {
   width: 30%;
   height: 30%;
-  border: solid black 1px;
+  border: solid var(--red) 1px;
+  background-color: var(--yellow);
+  border-radius: 20px;
+  color: var(--red);
+  font-size: 4rem;
+  font-weight: bold;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
 }
 
 #input {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   gap: 1rem;
+  background-color: var(--yellow);
+  padding: 2rem 4rem;
+  border-radius: 10px;
+}
+
+#player-input {
+  margin-top: 1rem;
+  display: flex;
+  gap: 2rem;
+}
+
+#player-input > input {
+  border: 2px var(--red) outset;
+  background-color: var(--yellow);
+  padding: 0.5rem;
+  border-radius: 10px 5px;
+  color: white;
+  /* border-bottom: 3px var(--red) solid; */
+}
+
+#player-input > input:focus {
+  outline: none;
+  color: white;
+}
+
+::placeholder {
+  color: white;
+}
+
+#start-btn {
+  background-color: #ff1312;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 15px;
+  margin-top: 2rem;
+}
+
+#reset-btn {
+  background-color: var(--yellow);
+  padding: 1rem 4rem;
+  border: none;
+  border-radius: 15px;
+  font-size: 1rem;
+  color: white;
+  margin-top: 3rem;
+}
+
+#message {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 20vh;
+  background-color: white;
+  color: var(--yellow);
+  font-size: 3rem;
 }
